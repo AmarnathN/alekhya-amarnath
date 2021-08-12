@@ -1,0 +1,21 @@
+/*  pink color style    */
+.us-story-section .story-text h3,
+.us-story-section .story-item i,
+.events-section .event-item .event-item-inner span,
+.we-section i.fa-heart:hover,
+.we-section .social-links a i,
+.we-section .we h3:hover,
+.header .nav ul li a.active,
+.header .nav ul li a:hover {
+  color: pink;
+}
+
+.we-section .social-links a i,
+.we-section .we img {
+  border-color: pink;
+}
+
+.events-section,
+.we-section .social-links a:hover i {
+  background-color: pink;
+}

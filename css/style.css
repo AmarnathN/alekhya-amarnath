@@ -1,0 +1,537 @@
+/*fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+@keyframes fadeInTop {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/*default*/
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #f3f2f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: wavy;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+header,
+section,
+footer {
+  display: block;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+.align-items-center {
+  align-items: center;
+}
+.section-title {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  margin-bottom: 60px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  border-bottom: 2px solid rgba(255, 255, 200, 0.7);
+  transition: color 1.5s ease;
+}
+
+.header.fixed {
+  background-color: #ffffff;
+  box-shadow: 0 0 8px #cccccc;
+}
+
+.header .logo {
+  padding: 0px 10px;
+}
+.header .logo a {
+  font-size: 40px;
+  font-weight: bold;
+  color: antiquewhite;
+  font-family: "Dancing Script", cursive;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: color 1.5s ease;
+}
+
+.header.fixed .logo a {
+  color: #000000;
+}
+
+.header .nav {
+  padding: 0px 10px;
+}
+
+.header .nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header .nav ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+.header .nav ul li a {
+  display: block;
+  padding: 25px 0px;
+  color: white;
+  font-family: "Great Vibes", cursive;
+  font-size: 25px;
+  font-weight: bolder;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: color 1s ease;
+}
+
+.header.fixed .nav ul li a {
+  color: #000000;
+}
+
+.header .hamburger-btn {
+  display: inline-block;
+  height: 40px;
+  width: 34px;
+  border-radius: 3px;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header.fixed .hamburger-btn {
+  border-color: #000000;
+  background-color: #000000;
+}
+
+.header .hamburger-btn span {
+  display: block;
+  height: 1px;
+  width: 16px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.header .hamburger-btn span::after,
+.header .hamburger-btn span::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  background-color: #ffffff;
+}
+
+.header .hamburger-btn span::before {
+  top: -6px;
+}
+
+.header .hamburger-btn span::before {
+  top: 6px;
+}
+
+/*<!--Home section--> */
+.home-section {
+  min-height: 100vh;
+  background-color: gray;
+}
+
+.home-section .slide {
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.home-section .slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+.home-section .slide::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.home-section .row {
+  min-height: 100vh;
+}
+
+.home-section .home-content {
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+  padding: 0 15px;
+}
+.home-section .slide.active .home-content p {
+  opacity: 0;
+  animation: fadeInTop 1s ease forwards;
+}
+
+.home-section .home-content p {
+  font-size: 25px;
+  margin: 0 0 15px;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.home-section .slide.active .home-content h1 {
+  opacity: 0;
+  animation: fadeInTop 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.home-section .home-content h1 {
+  font-size: 80px;
+  margin: 0 0 15px;
+  color: aliceblue;
+  font-family: "Dancing Script", cursive;
+  font-weight: bolder;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: color 1s ease;
+}
+
+.home-section .slide.active .home-content p.message {
+  opacity: 0;
+  animation: fadeInTop 1s ease forwards;
+  animation-delay: 0.75s;
+}
+.home-section .slide.active .home-content span {
+  opacity: 0;
+  animation: fadeInTop 1s ease forwards;
+  animation-delay: 1s;
+}
+.home-section .home-content span {
+  font-size: 20px;
+  color: aliceblue;
+  display: inline-block;
+  border: 1px solid antiquewhite;
+  border-radius: 20px;
+  padding: 7px 30px;
+  margin: 15px 0 0;
+}
+
+/* Live-section */
+.live-section {
+  padding: 80px 0 80px;
+}
+.live-section .section-title h2 {
+  font-size: 40px;
+  font-family: "Dancing Script";
+  font-weight: bold;
+}
+
+.live-section .live {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.live-section .live iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* <!--We section--> */
+.we-section {
+  padding: 80px 0 80px;
+}
+
+.we-section .section-title h2 {
+  font-size: 40px;
+  font-family: "Dancing Script";
+  font-weight: bold;
+}
+
+.we-section .we {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 60px;
+  text-align: center;
+  position: relative;
+}
+
+/* the divider */
+.we-section .we:nth-child(2)::before {
+  content: "";
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #cccccc;
+  position: absolute;
+}
+
+.we-section .we img {
+  max-width: 280px;
+  width: 100%;
+  border-radius: 50%;
+  border: 6px solid red;
+}
+
+.we-section .we h3 {
+  font-size: 40px;
+  font-family: "Dancing Script";
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: black;
+}
+.we-section .we p {
+  font-size: 16px;
+  font-family: "Dancing Script";
+  font-weight: normal;
+  line-height: 26px;
+  color: #555555;
+  margin: 0;
+}
+
+.we-section .social-links {
+  padding-top: 30px;
+}
+.we-section .social-links a {
+  display: inline-block;
+  margin: 0 3px;
+}
+
+.we-section .social-links a i {
+  height: 32px;
+  width: 32px;
+  border: 2px solid transparent;
+  line-height: 30px;
+  text-align: center;
+  display: block;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+}
+
+.we-section i.fa-heart {
+  position: absolute;
+  left: -15px;
+  width: 31px;
+  padding: 5px;
+  text-align: center;
+  font-size: 18px;
+  top: 30%;
+}
+
+.we-section .social-links a:hover i {
+  color: #f3f2f1;
+}
+
+/* us-story-section */
+.us-story-section {
+  padding: 80px 0 80px;
+}
+
+.us-story-section .story-content {
+  flex: 0 0 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+/* the divider */
+.us-story-section .story-item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  background-color: #cccccc;
+}
+
+.us-story-section .section-title h2 {
+  font-size: 40px;
+  font-family: "Dancing Script";
+  font-weight: bold;
+}
+
+.us-story-section .story-item i {
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  width: 31px;
+  text-align: center;
+  background-color: #f3f2f1;
+  padding: 5px;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.us-story-section .story-item {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 50px;
+}
+
+.us-story-section .story-item:last-child {
+  margin-bottom: 0px;
+}
+
+.us-story-section .story-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.us-story-section .story-item:nth-child(odd) .story-text {
+  padding: 0 60px 0 15px;
+  text-align: right;
+}
+.us-story-section .story-item:nth-child(odd) .story-img {
+  padding: 0 15px 0 60px;
+}
+.us-story-section .story-item:nth-child(even) .story-text {
+  padding: 0 15px 0 60px;
+  text-align: left;
+}
+.us-story-section .story-item:nth-child(even) .story-img {
+  padding: 0 60px 0 15px;
+}
+
+.us-story-section .story-text,
+.us-story-section .story-img {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.us-story-section .story-text h3 {
+  font-size: 24px;
+  margin: 0 0 8px;
+  color: #000000;
+  font-weight: 800;
+}
+.us-story-section .story-text span.date {
+  font-size: 15px;
+  margin: 15px 0;
+  color: #555555;
+  font-weight: 700;
+  display: block;
+}
+
+.us-story-section .story-text p {
+  font-size: 16px;
+  margin: 0;
+  line-height: 26px;
+  color: #555555;
+}
+
+/* events-section */
+.events-section .section-title h2 {
+  font-size: 40px;
+  font-family: "Dancing Script";
+  font-weight: bold;
+}
+
+.events-section {
+  padding: 80px 0 80px;
+}
+
+.events-section .event-item {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.events-section .event-item .event-item-inner {
+  background-color: #f3f2f1;
+  padding: 65px 45px 60px;
+  text-align: center;
+  box-shadow: 0 0 10px #888888;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.events-section .event-item .event-item-inner h3 {
+  color: #000000;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0 0 15px;
+  text-transform: capitalize;
+  border-bottom: 2px solid #cccccc;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+.events-section .event-item .event-item-inner span {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+}
+.events-section .event-item .event-item-inner span.time {
+  margin-bottom: 15px;
+}
+.events-section .event-item .event-item-inner p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #555555;
+  margin: 0;
+}
+
+.events-section .event-item-inner a {
+  background-color: transparent;
+  text-decoration: underline;
+}
