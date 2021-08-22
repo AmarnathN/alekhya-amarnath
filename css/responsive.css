@@ -2,6 +2,9 @@
   .header .nav {
     display: block !important;
   }
+  .header .hamburger-btn {
+    display: none;
+  }
 }
 
 @media (max-width: 991px) {
